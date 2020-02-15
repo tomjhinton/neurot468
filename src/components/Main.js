@@ -32,7 +32,7 @@ class Main extends React.Component{
 
       var dt = 1/60, R = 0.2;
 let plane2
-            var clothMass = 1;  // 1 kg in total
+            var clothMass = 0.1;  // 1 kg in total
             var clothSize = 8; // 1 meter
             var Nx = 24;
             var Ny = 24;
@@ -70,7 +70,7 @@ let plane2
             function initCannon(){
                 world = new CANNON.World();
                 world.broadphase = new CANNON.NaiveBroadphase();
-                world.gravity.set(0,-9.82,0);
+                world.gravity.set(0,-1,0);
                 world.solver.iterations = 20;
 
                 // Materials
@@ -82,8 +82,8 @@ sphereMaterial,
 0.0  // restitution
 );
                 // Adjust constraint equation parameters for ground/ground contact
-                clothSphereContactMaterial.contactEquationStiffness = 1e9;
-                clothSphereContactMaterial.contactEquationRelaxation = 3;
+                clothSphereContactMaterial.contactEquationStiffness = 0.4;
+                clothSphereContactMaterial.contactEquationRelaxation = 30;
 
                 // Add contact material to the world
                 world.addContactMaterial(clothSphereContactMaterial);
@@ -231,6 +231,7 @@ sphereMaterial,
                 // controls.update();
                 world.step(dt);
                 var t = world.time;
+                scene.position.x  += R * Math.sin(t)*2,
                 sphereBody.position.set(R * Math.sin(t)*2, 0, R * Math.cos(t)*2);
                 render();
 
