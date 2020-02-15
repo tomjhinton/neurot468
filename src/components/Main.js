@@ -224,7 +224,7 @@ sphereMaterial,
             plane2.verticesNeedUpdate = true
             scene.add( plane2 );
 
-            console.log(scene)
+
             function animate() {
 
                 requestAnimationFrame( animate );
@@ -241,7 +241,7 @@ sphereMaterial,
             function render() {
 
 
-              console.log(camera)
+              //console.log(camera)
 
                 for ( var i = 0, il = Nx+1; i !== il; i++ ) {
                     for ( var j = 0, jl = Ny+1; j !== jl; j++ ) {
@@ -286,7 +286,7 @@ sphereMaterial,
 
   render() {
 
-    console.log(this.state)
+    //console.log(this.state)
 
     return (
       <div>
