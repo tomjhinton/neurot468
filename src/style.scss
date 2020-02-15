@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Art";
+  src: url("assets/ArtDystopia.otf") format("opentype");
+}
+*{
+  font-family: 'Art';
+  font-size: 5vh;
+  background-size:contain;
+  background-repeat: no-repeat;
+  text-transform: uppercase;
+
+
+}
